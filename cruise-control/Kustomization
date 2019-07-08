@@ -1,6 +1,4 @@
 resources:
 - 11cruise-control-config.yml
-- 20kafka-broker-reporter-patch.yml
 - 40cruise-control-service.yml
 - 50cruise-control.yml
-- topic-create.yml
