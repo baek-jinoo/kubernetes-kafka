@@ -399,7 +399,7 @@ data:
 
   clusterConfigs.json: |-
     {
-      "min.insync.replicas": 2
+      "min.insync.replicas": 3
     }
 
   log4j2.xml: |-
