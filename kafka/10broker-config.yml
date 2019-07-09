@@ -178,6 +178,8 @@ data:
     # However, in production environments the default value of 3 seconds is more suitable as this will help to avoid unnecessary, and potentially expensive, rebalances during application startup.
     group.initial.rebalance.delay.ms=3000
 
+    # put some space here
+
   log4j.properties: |-
     # Unspecified loggers and loggers with additivity=true output to server.log and stdout
     # Note that INFO only applies to unspecified loggers, the log level of the child logger is used otherwise
