@@ -63,19 +63,29 @@ spec:
         command:
         - ./bin/kafka-server-start.sh
         - /etc/kafka/server.properties
+        - -Xms6g
+        - -Xmx6g
+        - -XX:MetaspaceSize=96m
+        - -XX:+UseG1GC
+        - -XX:MaxGCPauseMillis=20
+        - -XX:InitiatingHeapOccupancyPercent=35
+        - -XX:G1HeapRegionSize=16M
+        - -XX:MinMetaspaceFreeRatio=50
+        - -XX:MaxMetaspaceFreeRatio=80
         lifecycle:
           preStop:
             exec:
              command: ["sh", "-ce", "kill -s TERM 1; while $(kill -0 1 2>/dev/null); do sleep 1; done"]
         resources:
           requests:
-            cpu: 100m
-            memory: 100Mi
+            cpu: 3300m
+            memory: 8000Mi
           limits:
             # This limit was intentionally set low as a reminder that
             # the entire Yolean/kubernetes-kafka is meant to be tweaked
             # before you run production workloads
-            memory: 600Mi
+            cpu: 3300m
+            memory: 8000Mi
         readinessProbe:
           tcpSocket:
             port: 9092
@@ -103,4 +113,4 @@ spec:
       storageClassName: standard
       resources:
         requests:
-          storage: 10Gi
+          storage: 200Gi

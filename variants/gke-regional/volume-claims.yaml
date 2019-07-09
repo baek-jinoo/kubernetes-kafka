@@ -13,7 +13,7 @@ spec:
       storageClassName: kafka-broker
       resources:
         requests:
-          storage: 10Gi
+          storage: 200Gi
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -29,7 +29,7 @@ spec:
       storageClassName: kafka-zookeeper
       resources:
         requests:
-          storage: 1Gi
+          storage: 50Gi
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -45,4 +45,4 @@ spec:
       storageClassName: kafka-zookeeper-regional
       resources:
         requests:
-          storage: 1Gi
+          storage: 50Gi

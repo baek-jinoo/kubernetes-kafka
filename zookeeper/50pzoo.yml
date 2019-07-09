@@ -41,6 +41,8 @@ spec:
         command:
         - ./bin/zookeeper-server-start.sh
         - /etc/kafka/zookeeper.properties
+        - -Xms1g
+        - -Xmx2g
         lifecycle:
           preStop:
             exec:
@@ -54,10 +56,10 @@ spec:
           name: leader-election
         resources:
           requests:
-            cpu: 10m
-            memory: 100Mi
+            cpu: 300m
+            memory: 2000Mi
           limits:
-            memory: 120Mi
+            memory: 2200Mi
         readinessProbe:
           exec:
             command:
@@ -83,4 +85,4 @@ spec:
       storageClassName: standard
       resources:
         requests:
-          storage: 1Gi
+          storage: 64Gi
