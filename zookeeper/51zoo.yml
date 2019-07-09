@@ -41,11 +41,11 @@ spec:
         env:
         - name: KAFKA_LOG4J_OPTS
           value: -Dlog4j.configuration=file:/etc/kafka/log4j.properties
+        - name: KAFKA_HEAP_OPTS
+          value: "-Xms1g -Xmx2g"
         command:
         - ./bin/zookeeper-server-start.sh
         - /etc/kafka/zookeeper.properties
-        - -Xms1g
-        - -Xmx2g
         lifecycle:
           preStop:
             exec:

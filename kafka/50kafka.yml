@@ -48,7 +48,7 @@ spec:
         image: solsson/kafka:2.2.1@sha256:450c6fdacae3f89ca28cecb36b2f120aad9b19583d68c411d551502ee8d0b09b
         env:
         - name: KAFKA_HEAP_OPTS
-          value: "-Xms6g -Xmx6g -XX:MetaspaceSize=96m -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35 -XX:G1HeapRegionSize=16M -XX:MinMetaspaceFreeRatio=50 -XX:MaxMetaspaceFreeRatio=80"
+          value: "-Xms5g -Xmx5g -XX:MetaspaceSize=96m -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35 -XX:G1HeapRegionSize=16M -XX:MinMetaspaceFreeRatio=50 -XX:MaxMetaspaceFreeRatio=80"
         - name: CLASSPATH
           value: /opt/kafka/libs/extensions/*
         - name: KAFKA_LOG4J_OPTS
@@ -72,13 +72,13 @@ spec:
         resources:
           requests:
             cpu: 3300m
-            memory: 8000Mi
+            memory: 6000Mi
           limits:
             # This limit was intentionally set low as a reminder that
             # the entire Yolean/kubernetes-kafka is meant to be tweaked
             # before you run production workloads
             cpu: 3300m
-            memory: 8000Mi
+            memory: 6000Mi
         readinessProbe:
           tcpSocket:
             port: 9092
