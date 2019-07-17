@@ -92,8 +92,8 @@ data:
     min.samples.per.broker.metrics.window=1
 
     # The configuration for the BrokerCapacityConfigFileResolver (supports JBOD and non-JBOD broker capacities)
-    capacity.config.file=config/capacity.json
-    #capacity.config.file=config/capacityJBOD.json
+    #capacity.config.file=config/capacity.json
+    capacity.config.file=config/capacityJBOD.json
 
     # Configurations for the analyzer
     # =======================================
@@ -171,10 +171,10 @@ data:
     # =======================================
 
     # The zookeeper connect of the Kafka cluster
-    zookeeper.connect=zookeeper:2181/
+    zookeeper.connect=my-cluster-zookeeper-client:2181
 
     # If true, appropriate zookeeper Client { .. } entry required in jaas file located at $base_dir/config/cruise_control_jaas.conf
-    zookeeper.security.enabled=false
+    zookeeper.security.enabled=true
 
     # The max number of partitions to move in/out on a given broker at a given time.
     num.concurrent.partition.movements.per.broker=10
