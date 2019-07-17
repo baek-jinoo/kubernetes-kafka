@@ -171,7 +171,7 @@ data:
     # =======================================
 
     # The zookeeper connect of the Kafka cluster
-    zookeeper.connect=zookeeper:2181/
+    zookeeper.connect=my-cluster-zookeeper-client:2181/
 
     # If true, appropriate zookeeper Client { .. } entry required in jaas file located at $base_dir/config/cruise_control_jaas.conf
     zookeeper.security.enabled=false
