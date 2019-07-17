@@ -16,7 +16,7 @@ data:
 
     # The Kafka cluster to control.
     #bootstrap.servers=bootstrap:9092
-    bootstrap.servers=bootstrap.kafka.svc.cluster.local:9092
+    bootstrap.servers=my-cluster-kafka-bootstrap:9092
 
     # The maximum interval in milliseconds between two metadata refreshes.
     #metadata.max.age.ms=300000

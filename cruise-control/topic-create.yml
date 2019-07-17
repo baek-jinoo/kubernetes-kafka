@@ -12,7 +12,7 @@ spec:
         command:
         - ./bin/kafka-topics.sh
         - --zookeeper
-        -   zookeeper.kafka.svc.cluster.local:2181
+        -   my-cluster-zookeeper-client:2181
         - --create
         - --if-not-exists
         - --topic
